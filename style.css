@@ -61,8 +61,14 @@ img {
     margin: 5px;
 }
 
+h2 {
+    margin-bottom: 20px;
+}
+
 section {
-    padding: 70px;
+    max-width: 960px;
+    height: 400px;
+    padding: 20px;
     margin: 10px;
 }
 
