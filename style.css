@@ -9,21 +9,25 @@ body {
     color: white;
 }
 
+header {
+    display: inline;
+}
+
 .jumbotron {
     padding: 50px;
-    background-color: white;
+    background-color: black;
     font-size: 20px;
-    color: black;
+    color: white;
     display: flex;
     justify-content: center;
     
 }
 
 .typing-effect h1{
-    color: #131212;
+    color: white;
     font-family: monospace;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid rgb(34, 33, 33); /* The typwriter cursor */
+    border-right: .10em solid rgb(34, 33, 33); /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
@@ -46,6 +50,9 @@ body {
 
 nav {
     padding: 10px;
+    position: sticky;
+    top: 0;
+    background-color: black;
 }
 
 nav a {
@@ -54,6 +61,7 @@ nav a {
     display: inline;
     list-style-type: none;
     margin-right: 20px;
+    
 }
 
 img {
@@ -72,6 +80,10 @@ section {
     margin: 10px;
 }
 
+#skills {
+    overflow: scroll;
+}
+
 footer {
     text-align: center;
     padding: 20px;
@@ -81,4 +93,9 @@ footer {
 footer a {
     text-decoration: none;
     color: white;
+}
+
+.visitor-counter {
+    display: flex;
+    justify-content: center;
 }
