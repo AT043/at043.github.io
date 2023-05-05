@@ -6,103 +6,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AT043-none</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 <body>
-    <header>
+    <header class="header">
             <div class="jumbotron">
                 <div class="typing-effect">
-                    <h1>Hello!</h1>
+                    <h1>Yahallo!</h1>
                 </div>
             </div>
-            <nav>
-                <div class="nav-links">
-                    <a href="http://at79o.rf.gd"><h2>AT430</h2></a>
-                    <a href="#">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#contact">Contact</a>
+            <!-- <nav id="navbar"> 
+                <a href="http://at79o.rf.gd" class="logo"><h2>AT430</h2></a>
+                <a href="#" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </nav>-->
+            <nav class="navbar">
+                <a href="#" class="nav-logo">AT043.</a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
                 </div>
             </nav>
     </header>
     
     <main>
-        <section id="about">
+        <article class="about" id="about">
             <h2>
                 About me
             </h2>
-            <div >
-                <img src="https://static.zerochan.net/Asanagi.Umi.full.3716665.jpg" alt="" class="float-left" width="180px" height="240px">
-            </div>
+            <img src="https://static.zerochan.net/Asanagi.Umi.full.3716665.jpg" alt="" class="float-left" width="180px" height="240px">
             <p>
-                Hello! Im DiegoAT. Currently 1st year Computer network engineering student at Politeknik Negeri Jakarta. I've interest in computer network and security. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus velit tempore vitae delectus laborum! Quae, nesciunt blanditiis doloribus molestias fuga non est perspiciatis incidunt cum reiciendis cupiditate eius ad official. 
+                Im Thariq. Currently 1st year Computer network engineering student at Politeknik Negeri Jakarta. I've interest in computer network and security. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus velit tempore vitae delectus laborum! Quae, nesciunt blanditiis doloribus molestias fuga non est perspiciatis incidunt cum reiciendis cupiditate eius ad official. 
             </p>
             
-        </section>
-        <section id="skills">
+        </article>
+        <article id="skills">
             <h2>
                 Skills
             </h2>
-            <table>
-                <tr>
-                    <th>It Support</th>
-                    <th>Computer Networking</th>
-                    <th>Programming</th>
-                    <th>tools</th>
-                </tr>
-                <tr>
-                    <td>Desc: Im able to turn off and turn on any kinds of computer</td>
-                    <td>Desc: Im able to do ping to test connection</td>
-                    <td>Desc: Im able to print Hello world and make program to solve basic math question</td>
-                    <td>Desc: I m able to install and open the tools</td>
-                </tr>
-                <tr>
-                    <td><img src="https://images.credly.com/size/110x110/images/b2db4424-989e-4df9-ad19-1539d2743d74/image.png" alt="Google IT Support"></td>
-                    <td><img src="https://images.credly.com/size/110x110/images/70d71df5-f3dc-4380-9b9d-f22513a70417/CCNAITN__1_.png" alt="Cisco ITN"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><img src="https://images.credly.com/size/120x120/images/6321cd9f-5f08-4d2e-9418-2fbe1a932471/image.png" alt=""></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><img src="https://images.credly.com/size/340x340/images/0a6d331e-8abf-4272-a949-33f754569a76/CCNAENSA__1_.png" alt="" width="110px"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-        </section>
-        <section>
+            <section>
+                <h3>IT Support</h3>
+                <p>Im able to turn off and turn on any kinds of computer</p>
+                <img src="https://images.credly.com/size/110x110/images/b2db4424-989e-4df9-ad19-1539d2743d74/image.png" alt="Google IT Support">
+            </section>
+            <section>
+                <h3>Computer Network</h2>
+                <p>Im able to ping to check network connection</p>
+                <img src="https://images.credly.com/size/110x110/images/70d71df5-f3dc-4380-9b9d-f22513a70417/CCNAITN__1_.png" alt="Cisco ITN">
+                <img src="https://images.credly.com/size/340x340/images/0a6d331e-8abf-4272-a949-33f754569a76/CCNAENSA__1_.png" alt="Cisco ENSA" width="110px">
+                <img src="https://images.credly.com/size/120x120/images/6321cd9f-5f08-4d2e-9418-2fbe1a932471/image.png" alt="Cisco CCT">
+            </section>
+            <section>
+                <h3>Tools</h3>
+                <p>Im able to use these kind of tools</p>
+                <img>
+            </section>
+            <section>
+                <h3>Language</h3>
+                <p><span class="fi fi-id"></span> Aku Indonesia!</p>
+                <p><span class="fi fi-gb-eng"></span>I can speak english, litle litle sih</p>
+                <p><span class="fi fi-ru"></span>Y Russkiy, Uraa!</p>
+                <p><span class="fi fi-es"></span>Espana</p>
+            </section>
+        </article>
+        <article>
             <h2>
                 Projects
             </h2>
             <p>
                 Nothing, too lazy to build something.. 
             </p>
-        </section>
-        <section id="contact">
+        </article>
+        <article class="contact" id="contact">
             <h2>Reach me @</h2>
-            <table>
-                <tr>
-                    <td><a href="#">facebook</a></td>
-                    <td><a href="#">instagram</a></td>
-                    <td><a href="mailto:daffa.assyam.thariq.an21@mhsw.pnj.ac.id">mail</a></td>
-                </tr>
-            </table>
-        </section>
+            <div class="socials-link">
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="mailto:daffa.assyam.thariq.an21@mhsw.pnj.ac.id"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
+            </div>
+            
+        </article>
     </main>
     <footer>
-        <hr>
         <div class="visitor-counter">
-            <img src="https://count.getloli.com/get/@:at043?theme:moebooru-h" alt=":name" />
+            <!-- <img src="https://count.getloli.com/get/@:at043?theme:moebooru-h" alt=":name" /> -->
         </div>
         <p>
             2023 &#169; 
             <a href="http://at79o.rf.gd">AT043</a>
         </p>
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>
