@@ -58,6 +58,7 @@ header {
     position: sticky;
     top: 0;
     background-color: #000;
+    z-index: 1;
 }
 
 .hamburger {
@@ -118,7 +119,7 @@ nav li {
 
 .about img {
     float: left;
-    margin: 5px;
+    margin-right: 25px;
 }
 
 main {
@@ -174,6 +175,7 @@ section img:hover{
 .contact a:hover {
     font-size: 50px;
     color:#000;
+    border-radius: 5px;
     background-color: #fff;
 }
 
@@ -207,6 +209,10 @@ footer a {
         border-radius: 10px;
         text-align: center;
         transition: 0.3s;
+    }
+
+    .navbar {
+        z-index: 1;
     }
 
     .nav-menu.active {
@@ -246,5 +252,20 @@ footer a {
         font-size: 1.2rem;
     }
 
+    .visitor-counter img {
+        width: 250px;
+    }
+
+    .contact a{
+        padding: .5rem 1rem;
+    }
+
+    .contact a:hover {
+        font-size: 45px;
+    }
+
+    .socials-link {
+        font-size: 35px;
+    }
 }
 
