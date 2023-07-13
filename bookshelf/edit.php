@@ -29,15 +29,28 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Book</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: azure;
+            color: black;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <!-- Header content here -->
-    </header>
     <main>
         <div class="book-item">
-            <h2>Edit Book</h2>
-            <form method="post" action="update.php">
+            <h1>Edit Book</h1>
+            <form method="post" action="update.php" method="post" action="update.php" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $book['id']; ?>">
                 <label>Judul</label>
                 <input type="text" name="judul" value="<?php echo $book['judul']; ?>" required>
@@ -55,13 +68,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id"])) {
                         echo "<option value='{$key}' {$selected}>{$value}</option>";
                     }
                     ?>
-                </select>
+                </select
                 <button class="btn" type="submit">Update</button>
             </form>
         </div>
     </main>
-    <footer>
-        <p>AT043.</p>
-    </footer>
 </body>
 </html>

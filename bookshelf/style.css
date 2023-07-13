@@ -15,7 +15,7 @@ header {
     display: inline;
 }
 
-jumbotron {
+.jumbotron {
     padding: 60px;
     background-color: azure;
     font-size: 60px;
@@ -63,20 +63,6 @@ nav {
     color: #000;
 }
 
-.hamburger {
-    display: none;
-}
-
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #fff;
-}
-
 .nav-menu {
     display: flex;
     justify-content: space-between;
@@ -119,28 +105,6 @@ nav li {
     list-style-type: none;
 }
 
-.article-item {
-    border: 0.5px solid gray;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-.article-item-title {
-    margin: 0;
-}
-.article-item-detail {
-    margin: 5px;
-}
-.article-title {
-    margin-bottom: 0;
-}
-.article-subtitle {
-    margin: 5px;
-    color: gray;
-}
-.article-detail {
-    margin: 5px;
-}
-
 label, input, select, textarea {
     font-size: 20px;
     display:list-item;
@@ -148,6 +112,7 @@ label, input, select, textarea {
 input, select, textarea {
     margin-bottom: 10px;
 }
+
 .btn {
     background-color: blue;
     text-decoration: none;
@@ -188,7 +153,6 @@ input, select, textarea {
     box-shadow: 2px 4px #000;
 }
 
-
 table {
     margin-top: 30px;
     border-collapse: collapse;
@@ -225,7 +189,7 @@ footer a {
     text-decoration: none;
     color: white;
 }
-/*blank-space*/
+
 
 @media only screen and (max-width: 768px) {
     
@@ -242,7 +206,7 @@ footer a {
         transition: 0.3s;
     }
 
-    .navbar {
+    nav {
         z-index: 1;
     }
 
@@ -254,24 +218,12 @@ footer a {
         margin: 2.5rem 0;
     }
 
-    .hamburger {
-        display: block;
-        cursor: pointer;
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
     body {
         font-size: 20px;
+    }
+
+    table, th, td {
+        border: 2px solid black;
+        width: 50%;
     }
 }

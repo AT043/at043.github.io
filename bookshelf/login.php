@@ -1,9 +1,7 @@
 <?php
-// menyertakan file program koneksi.php pada register
 require('connection.php');
-// inisialisasi session
 session_start();
-$error = 'User/Password Salah!';
+$error = '';
 $validate = '';
 // mengecek apakah session username tersedia atau tidak jika tersedia maka akan diredirect ke halaman index
 if (isset($_SESSION['username'])) {

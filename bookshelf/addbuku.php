@@ -17,11 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $gambar = $newfilename;
     }
 
-    if ($_FILES["pdf"]["name"] != "") {
-        $pdf_temp = explode(".", basename($_FILES["pdf"]["name"]));
+    if ($_FILES["filepdf"]["name"] != "") {
+        $pdf_temp = explode(".", basename($_FILES["filepdf"]["name"]));
         $pdf_newfilename = date('dmYHis') . "." . $pdf_temp[count($pdf_temp) - 1];
         $pdf_target_file = $pdf_dir . $pdf_newfilename;
-        move_uploaded_file($_FILES["pdf"]["tmp_name"], $pdf_target_file);
+        move_uploaded_file($_FILES["filepdf"]["tmp_name"], $pdf_target_file);
         $filepdf = $pdf_newfilename;
     }
     
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script>window.alert('Berhasil menambahkan buku.');
             window.location.href='/';</script>";
     } else {
-        echo "Gagal menambahkan buku: {$mysqli->error}";
+        echo "Gagal menambahkan buku: {$con->error}";
     }
     header("Location: index.php");
 }
@@ -45,55 +45,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bookshelf | Tambah</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
+        .form {
+            background-color: azure;
+            color: black;
+            font-size: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-        }
-
-        form {
-            max-width: 500px;
-            width: 100%;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
+            list-style: none;
         }
 
         h1 {
-            text-align: center;
-        }
-
-        label {
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
             margin-bottom: 10px;
         }
-
-        input, select {
-            width: 100%;
-            padding: 5px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+        
     </style>
 </head>
 <body>
     <h1>Tambah Buku</h1>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
+    <div class="form">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
         <label>Judul</label>
         <input type="text" name="judul" size="100" maxlength="200" required>
         <label>Author</label>
@@ -107,11 +84,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ?>
         </select>
         <label>Gambar</label>
-        <input type="file" name="gambar" accept="image/*">
+        <input type="file" name="gambar" accept="image/">
 
         <label>Ebook</label>
-        <input type="file" name="pdf" accept="pdffile/*">
+        <input type="file" name="pdf" accept="pdffile/">
         <button class="btn" type="submit">Tambah</button>
     </form>
+    </div>
+    
 </body>
 </html>

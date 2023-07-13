@@ -26,9 +26,6 @@ require("global_vars.php");
                     <li class="nav-item">
                         <a href="login.php" class="nav-link">login</a>
                     </li>
-                    <!--<li class="nav-item">
-                        <a href="#" class="nav-link">Contact</a>
-                    </li>-->
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
@@ -36,11 +33,11 @@ require("global_vars.php");
                     <span class="bar"></span>
                 </div>
                 </nav>
-        <jumbotron>
+        <div class="jumbotron">
             <div class="typing-effect">
                 <p>Baca Buku...!</p>
             </div>
-        </jumbotron>
+        </div>
     </header>
     <main>
     <?php
@@ -67,7 +64,7 @@ require("global_vars.php");
                 while ($bookRow = $bookResult->fetch_assoc()) {
             ?>
             <tr>
-                <td><a href="show.php?id=<?php echo $bookRow['id']; ?>"><img src="images/<?php echo $bookRow['gambar']; ?>" height="200"></a><p><?php echo $bookRow["judul"]; ?></p><a class="btn-green" href="pdfreader.php?id=<?php echo $bookRow['id']; ?>">Baca</a></td>
+                <td><img src="images/<?php echo $bookRow['gambar']; ?>" height="200"><p><?php echo $bookRow["judul"]; ?></p><a class="btn-green" href="pdfreader.php?id=<?php echo $bookRow['id']; ?>">Baca</a></td>
                 <td><span><?php echo $bookRow["author"]; ?></span></td>
                 <td><span><?php echo $bookRow["diupdate"]; ?></span></td>
             </tr>

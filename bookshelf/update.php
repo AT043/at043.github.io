@@ -28,6 +28,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $gambar = $book["gambar"];
     }
 
+    if ($_FILES["filepdf"]["name"] != "") {
+
+        $oldPdf = $book["filepdf"];
+        if ($oldPdf != "") {
+            unlink($pdf_dir . $oldPdf);
+        }
+
+        $pdf_temp = explode(".", basename($_FILES["filepdf"]["name"]));
+        $pdf_newfilename = date('dmYHis') . "." . $pdf_temp[count($pdf_temp) - 1];
+        $pdf_target_file = $pdf_dir . $pdf_newfilename;
+        move_uploaded_file($_FILES["filepdf"]["tmp_name"], $pdf_target_file);
+        $filepdf = $pdf_newfilename;
+    }else {
+        // Keep the existing image file
+        $filepdf = $book["filepdf"];
+    }
+
     // Update the book details in the database
     $sql = "UPDATE buku SET judul = '$judul', author = '$author', gambar = '$gambar', kategori = '$kategori' WHERE id = '$id'";
     if ($con->query($sql)) {

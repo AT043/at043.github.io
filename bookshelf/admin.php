@@ -33,11 +33,11 @@ require("global_vars.php");
                     <span class="bar"></span>
                 </div>
         </nav>
-        <jumbotron>
+        <div class="jumbotron">
             <div class="typing-effect">
                 <p>Baca Buku...!</p>
             </div>
-        </jumbotron>
+        </div>
     </header>
     <main>
     <?php
@@ -64,10 +64,10 @@ require("global_vars.php");
                 while ($bookRow = $bookResult->fetch_assoc()) {
             ?>
             <tr>
-                <td><a href="show.php?id=<?php echo $bookRow['id']; ?>"><img src="/images/<?php echo $bookRow['gambar']; ?>" height="200"></a><p><?php echo $bookRow["judul"]; ?></p><a class="btn-green" href="#">Baca</a></td>
+            <td><img src="images/<?php echo $bookRow['gambar']; ?>" height="200"><p><?php echo $bookRow["judul"]; ?></p><a class="btn-green" href="pdfreader.php?id=<?php echo $bookRow['id']; ?>">Baca</a></td>
                 <td><span><?php echo $bookRow["author"]; ?></span></td>
                 <td><span><?php echo $bookRow["diupdate"]; ?></span></td>
-                <td><a class="btn" href="edit.php">edit</a></br><a class="btn-red" href="#">hapus</a></td>
+                <td><a class="btn" href="edit.php?id=<?php echo $bookRow['id']; ?>">edit</a></br><a class="btn-red" href="delete.php?id=<?php echo $bookRow['id']; ?>">Hapus</a></td>
             </tr>
             <?php
                 }
@@ -87,5 +87,6 @@ require("global_vars.php");
     <footer>
         <p>AT043.</p>
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>
