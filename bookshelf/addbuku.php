@@ -17,11 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $gambar = $newfilename;
     }
 
-    if ($_FILES["filepdf"]["name"] != "") {
-        $pdf_temp = explode(".", basename($_FILES["filepdf"]["name"]));
+    if ($_FILES["pdf"]["name"] != "") {
+        $pdf_temp = explode(".", basename($_FILES["pdf"]["name"]));
         $pdf_newfilename = date('dmYHis') . "." . $pdf_temp[count($pdf_temp) - 1];
         $pdf_target_file = $pdf_dir . $pdf_newfilename;
-        move_uploaded_file($_FILES["filepdf"]["tmp_name"], $pdf_target_file);
+        move_uploaded_file($_FILES["pdf"]["tmp_name"], $pdf_target_file);
         $filepdf = $pdf_newfilename;
     }
     

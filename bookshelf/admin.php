@@ -87,6 +87,5 @@ require("global_vars.php");
     <footer>
         <p>AT043.</p>
     </footer>
-    <script src="main.js"></script>
 </body>
 </html>

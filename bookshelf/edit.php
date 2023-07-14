@@ -68,7 +68,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET["id"])) {
                         echo "<option value='{$key}' {$selected}>{$value}</option>";
                     }
                     ?>
-                </select
+                </select>
+
                 <button class="btn" type="submit">Update</button>
             </form>
         </div>

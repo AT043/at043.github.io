@@ -1,32 +1,32 @@
 <?php
-// menyertakan file program koneksi.php pada register
+
 require('connection.php');
-// inisialisasi session
+
 session_start();
 $error = '';
 $validate = '';
-// mengecek apakah form registrasi di submit atau tidak
+
 if (isset($_POST['register'])) {
-    // menghilangkan backslashes
+
     $username = stripslashes($_POST['newUsername']);
-    // cara sederhana mengamankan dari sql injection
+
     $username = mysqli_real_escape_string($con, $username);
     $password = stripslashes($_POST['newPassword']);
     $password = mysqli_real_escape_string($con, $password);
     $repass = stripslashes($_POST['repassword']);
     $repass = mysqli_real_escape_string($con, $repass);
-    // cek apakah nilai yang diinputkan pada form ada yang kosong atau tidak
+  
     if (!empty(trim($username)) && !empty(trim($password)) && !empty(trim($repass))) {
-        // mengecek apakah password yang diinputkan sama dengan re-password yang diinputkan kembali
+       
         if ($password == $repass) {
-            // memanggil method cek_nama untuk mengecek apakah user sudah terdaftar atau belum
+           
             if (cek_nama($username, $con) == 0) {
-                // hashing password sebelum disimpan didatabase
+              
                 $pass = password_hash($password, PASSWORD_DEFAULT);
-                // insert data ke database
+               
                 $query = "INSERT INTO masuk (username, password) VALUES ('$username', '$pass')";
                 $result = mysqli_query($con, $query);
-                // jika insert data berhasil maka akan diredirect ke halaman index.php serta menyimpan data username ke session
+              
                 if ($result) {
                     $_SESSION['username'] = $username;
                     header('Location: index.php');
@@ -44,7 +44,7 @@ if (isset($_POST['register'])) {
         $error = 'Data tidak boleh kosong !!';
     }
 }
-// fungsi untuk mengecek username apakah sudah terdaftar atau belum
+
 function cek_nama($username, $con)
 {
     $nama = mysqli_real_escape_string($con, $username);

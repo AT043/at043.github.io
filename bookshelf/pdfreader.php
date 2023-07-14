@@ -32,14 +32,13 @@ require("global_vars.php");
     if (isset($_GET["id"])) {
         $id = $_GET["id"];
 
-        // Retrieve the PDF file details from the database
         $sql = "SELECT filepdf FROM buku WHERE id = '$id'";
         $result = $con->query($sql);
         if ($result->num_rows > 0) {
             $pdfFile = $result->fetch_assoc()["filepdf"];
             $pdfPath = $pdf_dir . $pdfFile;
             if (file_exists($pdfPath)) {
-                // Display the PDF file using an embed element
+    
                 echo "<embed src='{$pdfPath}' type='application/pdf' />";
 
             } else {

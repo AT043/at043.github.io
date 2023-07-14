@@ -6,56 +6,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["id"];
     $judul = $_POST["judul"];
     $author = $_POST["author"];
-    $gambar = ""; // To store the new image file name
+    $gambar = ""; 
+    $filepdf = "";
     $kategori = $_POST["kategori"];
 
-    // Check if a new image file was uploaded
     if ($_FILES["gambar"]["name"] != "") {
-        // Remove the existing image file
+
         $oldImage = $book["gambar"];
         if ($oldImage != "") {
             unlink($images_dir . $oldImage);
         }
 
-        // Upload the new image file
         $temp = explode(".", basename($_FILES["gambar"]["name"]));
         $newfilename = date('dmYHis') . "." . $temp[count($temp) - 1];
         $target_file = $images_dir . $newfilename;
         move_uploaded_file($_FILES["gambar"]["tmp_name"], $target_file);
         $gambar = $newfilename;
     } else {
-        // Keep the existing image file
+
         $gambar = $book["gambar"];
     }
 
-    if ($_FILES["filepdf"]["name"] != "") {
+    if ($_FILES["pdf"]["name"] != "") {
 
-        $oldPdf = $book["filepdf"];
+        $oldPdf = $book["pdf"];
         if ($oldPdf != "") {
             unlink($pdf_dir . $oldPdf);
         }
 
-        $pdf_temp = explode(".", basename($_FILES["filepdf"]["name"]));
+        $pdf_temp = explode(".", basename($_FILES["pdf"]["name"]));
         $pdf_newfilename = date('dmYHis') . "." . $pdf_temp[count($pdf_temp) - 1];
         $pdf_target_file = $pdf_dir . $pdf_newfilename;
-        move_uploaded_file($_FILES["filepdf"]["tmp_name"], $pdf_target_file);
+        move_uploaded_file($_FILES["pdf"]["tmp_name"], $pdf_target_file);
         $filepdf = $pdf_newfilename;
     }else {
-        // Keep the existing image file
-        $filepdf = $book["filepdf"];
+
+        $filepdf = $book["pdf"];
     }
 
-    // Update the book details in the database
-    $sql = "UPDATE buku SET judul = '$judul', author = '$author', gambar = '$gambar', kategori = '$kategori' WHERE id = '$id'";
+    $sql = "UPDATE buku SET judul = '$judul', author = '$author', gambar = '$gambar', kategori = '$kategori', filepdf = '$filepdf' WHERE id = '$id'";
     if ($con->query($sql)) {
-        // Redirect to admin.php if the update is successful
+ 
         header("Location: admin.php");
         exit;
     } else {
         echo "Error updating book: " . $con->error;
     }
 } else {
-    // Redirect to admin.php if the form was not submitted
     header("Location: admin.php");
     exit;
 }
