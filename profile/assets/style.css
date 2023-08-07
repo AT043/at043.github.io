@@ -21,12 +21,12 @@ header {
     color: white;
     display: flex;
     justify-content: center;
-    
 }
 
-.typing-effect h1{
+.typing-effect p{
     color: white;
     font-family: monospace;
+    font-size: 3.5rem;
     overflow: hidden; 
     border-right: .05em solid rgb(34, 33, 33); 
     white-space: nowrap; 
@@ -137,6 +137,44 @@ article h2 {
     margin: 30px 15px;
 }
 
+article p{
+    text-align: justify;
+}
+
+.btn {
+    background-color: #fff;
+    text-decoration: none;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    margin-top: 10px;
+    box-shadow: 2px 4px grey;
+    font-weight: bold;
+}
+.btn:hover {
+    box-shadow: 1px 3px grey;
+    font-weight: lighter;
+}
+
+details summary{
+    font-weight: bold;
+}
+
+details p, a{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+article details{
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+
+section p{
+    text-align: justify;
+}
+
 section h3 {
     font-size: 1.5rem;
     margin: 20px 0;
@@ -149,7 +187,7 @@ section i {
 section img {
     padding: 10px 20px;
     width: 160px;
-    transition: transform .2s;
+    
 }
 
 section a{
@@ -157,7 +195,15 @@ section a{
 }
 
 section img:hover{
+    transition: transform .5s;
     transform: scale(120%);
+}
+
+.languages p{
+    display: inline-flex;
+    justify-content:left;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .contact a{
@@ -188,7 +234,7 @@ footer {
 
 footer a {
     text-decoration: none;
-    color: white;
+    color: #fff;
 }
 
 .visitor-counter {
