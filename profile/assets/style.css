@@ -4,10 +4,11 @@
     scroll-behavior: smooth;
 }
 
-p, h1, h2::selection {
-    color: black;
-	background-color: white;
+::selection {
+    color: black; 
+    background-color: white;
 }
+
 body {
     background: #000;
     font-family: 'Courier New', Courier, monospace;
