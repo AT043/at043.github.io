@@ -4,7 +4,7 @@
     scroll-behavior: smooth;
 }
 
-body::selection {
+p::selection {
     color: black; 
     background-color: white;
 }
