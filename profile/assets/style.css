@@ -3,6 +3,13 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+
+:root {
+    --grey: #a3a89f;
+    --white: #fcfcfc;
+    --black: #1f1f1f;
+}
+
 body {
     background: #000;
     font-family: 'Courier New', Courier, monospace;
@@ -160,6 +167,18 @@ article p{
     font-weight: lighter;
 }
 
+.light-btn {
+    position: absolute;
+    top: 20px;
+    left: 450px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    color: var(--btnFontColor);
+    background-color: var(--btnBg);
+  }
+
 details summary{
     font-weight: bold;
 }
@@ -249,6 +268,23 @@ footer a{
 .visitor-counter {
     display: flex;
     justify-content: center;
+}
+
+.light-theme {
+    --bg: var(--white);
+    --fontColor: var(--black);
+    --btnBg: var(--black);
+    --btnFontColor: var(--white);
+    --barColor: var(--black);
+    --borderColor: var(--black);
+    --btnShadow: var(--grey);
+}
+  
+.dark-theme {
+    --bg: var(--black);
+    --fontColor: var(--green);
+    --btnBg: var(--white);
+    --btnFontColor: var(--black);
 }
 
 @media only screen and (max-width: 768px) {
